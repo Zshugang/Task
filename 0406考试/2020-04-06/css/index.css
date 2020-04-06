@@ -1,0 +1,27 @@
+
+@media(min-width:768px){
+    .containers{
+        width: 900px;
+        margin:10px auto ;
+    }
+    .productBox{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+   
+
+}
+.productBox .card{
+    margin-right: 1%;
+	margin-bottom: 10px;
+	width: 19.2%;
+    }
+.card:nth-child(5n+5){
+    margin-right: 0;
+}
+.card-body .card-title{
+    text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+    }
