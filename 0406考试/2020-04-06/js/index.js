@@ -9,7 +9,7 @@ let shopModel = (function shopModel() {
 
         let xhr = new XMLHttpRequest;
         xhr.open('GET','./json/product.json',false);
-        xhr.onreadystatechange = function () {
+        xhr.onreadystatechange =()=> {
 			if (xhr.readyState === 4 && xhr.status === 200) {
 				_data = JSON.parse(xhr.responseText);
 			}
@@ -24,7 +24,6 @@ let shopModel = (function shopModel() {
        let str =``;
        _data.forEach(item => {
            let{
-            id,
             title, 
             price, 
             time, 
@@ -58,7 +57,8 @@ let shopModel = (function shopModel() {
 			// 给每个LI设置自定义属性FLAG：升降序标识，初始-1
 			item.flag = -1;
 			item.onclick = function () {
-				returnTip.call(this);
+                returnTip.call(this);
+                this.flag*=-1;
 				let pai = this.getAttribute('data-nav');
 				_data.sort((a, b) => {
 					a = String(a[pai]).replace(/-/g, '');
